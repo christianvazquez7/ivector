@@ -76,6 +76,7 @@ dev_ivs = zeros(tv_dim, length(feaFiles));
 parfor file = 1 : length(feaFiles),
     dev_ivs(:, file) = extract_ivector(stats{file}, ubm, T);
 end
+
 % reduce the dimensionality with LDA
 spk_labs = C{2};
 V = lda(dev_ivs, spk_labs);
